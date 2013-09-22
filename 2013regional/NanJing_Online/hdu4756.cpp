@@ -68,43 +68,6 @@ void go(int u,int f)
         opt[f][u] = opt[u][f];
     }
 }
-
-double get_val()
-{
-
-
-    double  ret(0),sign(1);
-    int flag=0;
-    double tmp=0.1;
-    char c;
-    while((c=getchar())==' '||c=='\n'||c=='\r');
-    if(c=='-')
-        sign=-1;
-    else
-        ret=c-'0';
-    while((c=getchar())!=' '&&c!='\n'&&c!='\r')
-    {
-
-
-        if(c=='.')
-        {
-
-
-            flag=1;
-            continue;
-        }
-        if(!flag)
-            ret=ret*10+c-'0';
-        else 
-        {
-
-
-            ret+=(c-'0')*tmp;
-            tmp*=0.1;
-        }
-    }
-    return ret*sign;
-}
 void init(int k)
 {
     for(int i = 0; i < n; i++) {
@@ -135,7 +98,7 @@ int main()
     while(t--)
     {
         scanf("%d%d",&n,&k);
-        for(int i = 0; i < n; i++) x[i]=get_val(),y[i]=get_val();//scanf("%lf%lf",&x[i],&y[i]);
+        for(int i = 0; i < n; i++) scanf("%lf%lf",&x[i],&y[i]);
         init(k);
     }
     return 0;
